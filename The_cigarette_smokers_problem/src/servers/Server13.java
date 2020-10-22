@@ -18,17 +18,17 @@ public class Server13 extends Thread{
     public void run() {
         try{
             System.out.println("Servidor13 bloqueou recurso 1");
-            s1.acquire();
+            s1.acquire(); //1- SEMAFORO blocante recurso 1 para apenas um cliente usar o recurso 1;
             Thread.sleep(2000);
 
             System.out.println("Servidor13 liberou recurso 1");
-            s1.release();
+            s1.release();//2- SEMAFORO Liberando recurso 1 para outro cliente usa-lo;
 
             System.out.println("Servidor13 bloqueou recurso 3");
-            s3.acquire();
+            s3.acquire();//3- SEMAFORO blocante recurso 3 para apenas um cliente usar o recurso 3;
             Thread.sleep(2000);
             System.out.println("Servidor13 liberou recurso 3");
-            s3.release();
+            s3.release();//4- SEMAFORO Liberando recurso 3 para outro cliente usa-lo;
 
         }
         catch (InterruptedException e){

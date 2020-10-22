@@ -20,6 +20,7 @@ public class App {
 
 
     public static void run(){
+    	
         Semaphore semaphore = new Semaphore(1);
         Semaphore semaphore2 = new Semaphore(1);
         Semaphore semaphore3 = new Semaphore(1);
@@ -27,7 +28,8 @@ public class App {
         Server12 server12 = new Server12(semaphore,semaphore2);
         Server13 server13 = new Server13(semaphore,semaphore3);
         Server23 server23 = new Server23(semaphore2,semaphore3);
-
+        
+        //passando as referencias do semaforos para os clientes saber se o recurso está ou não liberado.
         Cliente12 cliente12 = new Cliente12(semaphore,semaphore2);
         Cliente13 cliente13 = new Cliente13(semaphore,semaphore3);
         Cliente23 cliente23 = new Cliente23(semaphore2,semaphore3);

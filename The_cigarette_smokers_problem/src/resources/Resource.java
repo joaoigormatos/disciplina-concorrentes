@@ -1,5 +1,6 @@
 package resources;
 
+//Pojo do Recursos
 public class Resource {
     private String name;
 
